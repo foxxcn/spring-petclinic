@@ -287,6 +287,79 @@
         <artifactId>cyclonedx-maven-plugin</artifactId>
       </plugin>
 
+      <plugin>
+        <groupId>io.github.fvarrui</groupId>
+        <artifactId>javapackager</artifactId>
+        <version>1.7.6</version>
+        <executions>
+            <execution>
+                <phase>package</phase>
+                <goals>
+                    <goal>package</goal>
+                </goals>
+                <configuration>
+                    <!-- 必需配置 -->
+                    <mainClass>org.springframework.samples.petclinic.PetClinicApplication</mainClass>
+                    
+                    <!-- 基本配置 -->
+                    <name>spring-petclinic</name>
+                    <displayName>Spring PetClinic</displayName>
+                    <description>Spring Pet Clinic Sample Application</description>
+                    <organizationName>Spring</organizationName>
+                    <organizationUrl>https://spring.io</organizationUrl>
+                    
+                    <!-- JRE配置，需要具备 jmods 的 jdk -->
+                    <bundleJre>true</bundleJre>
+                    <jdkPath>C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot</jdkPath>
+                    <customizedJre>false</customizedJre>
+                    
+                    <!-- 打包配置 -->
+                    <generateInstaller>true</generateInstaller>
+                    <administratorRequired>false</administratorRequired>
+                    <platform>auto</platform>
+                    <createZipball>true</createZipball>
+                    
+                    <!-- 额外资源 -->
+                    <additionalResources>
+                        <additionalResource>src/main/resources/application.properties</additionalResource>
+                    </additionalResources>
+                    
+                    <!-- 平台特定配置 -->
+                    <winConfig>
+                        <!-- 选择WHY作为EXE创建工具，替代默认的launch4j -->
+                        <exeCreationTool>winrun4j</exeCreationTool>
+                        <!-- Windows图标文件 -->
+                        <icoFile>${basedir}/src/main/resources/static/resources/images/favicon.ico</icoFile>
+                        <!-- Windows安装程序设置 -->
+                        <generateSetup>true</generateSetup>
+                        <generateMsi>false</generateMsi>
+                        <headerType>gui</headerType>
+                        <setupMode>installForAllUsers</setupMode>
+                    </winConfig>
+                    
+                    <linuxConfig>
+                        <!-- Linux图标文件 -->
+                        <pngFile>${basedir}/src/main/resources/static/resources/images/favicon.png</pngFile>
+                        <!-- 其他Linux特定配置 -->
+                        <generateDeb>true</generateDeb>
+                        <generateRpm>true</generateRpm>
+                        <categories>
+                            <category>Development</category>
+                        </categories>
+                    </linuxConfig>
+                    
+                    <macConfig>
+                        <!-- macOS图标文件 (需要.icns格式) -->
+                        <!-- <icnsFile>${basedir}/src/main/resources/icons/app.icns</icnsFile> -->
+                        <!-- 其他macOS特定配置 -->
+                        <generateDmg>true</generateDmg>
+                        <generatePkg>true</generatePkg>
+                    </macConfig>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+
     </plugins>
   </build>
   <licenses>
