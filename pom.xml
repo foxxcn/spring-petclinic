@@ -326,7 +326,7 @@
                     
                     <!-- 平台特定配置 -->
                     <winConfig>
-                        <!-- 选择WHY作为EXE创建工具，替代默认的launch4j -->
+                        <!-- 选择winrun4j作为EXE创建工具，替代默认的launch4j -->
                         <exeCreationTool>winrun4j</exeCreationTool>
                         <!-- Windows图标文件 -->
                         <icoFile>${basedir}/src/main/resources/static/resources/images/favicon.ico</icoFile>

@@ -14,6 +14,7 @@ Spring Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) app
 git clone https://github.com/spring-projects/spring-petclinic.git
 cd spring-petclinic
 ./mvnw package
+# mvnw.cmd package
 java -jar target/*.jar
 ```
 
