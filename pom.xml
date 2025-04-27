@@ -310,7 +310,7 @@
                     
                     <!-- JRE配置，需要具备 jmods 的 jdk -->
                     <bundleJre>true</bundleJre>
-                    <jdkPath>C:\Program Files\Eclipse Adoptium\jdk-21.0.6.7-hotspot</jdkPath>
+                    <jdkPath>${java.home}</jdkPath>
                     <customizedJre>false</customizedJre>
                     
                     <!-- 打包配置 -->
