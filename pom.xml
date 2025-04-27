@@ -342,18 +342,18 @@
                         <pngFile>${basedir}/src/main/resources/static/resources/images/favicon.png</pngFile>
                         <!-- 其他Linux特定配置 -->
                         <generateDeb>true</generateDeb>
-                        <generateRpm>true</generateRpm>
+                        <generateRpm>false</generateRpm>
                         <categories>
-                            <category>Development</category>
+                            <category>Utility</category>
                         </categories>
                     </linuxConfig>
                     
                     <macConfig>
                         <!-- macOS图标文件 (需要.icns格式) -->
-                        <!-- <icnsFile>${basedir}/src/main/resources/icons/app.icns</icnsFile> -->
+                        <icnsFile>${basedir}/src/main/resources/icons/app.icns</icnsFile>
                         <!-- 其他macOS特定配置 -->
                         <generateDmg>true</generateDmg>
-                        <generatePkg>true</generatePkg>
+                        <generatePkg>false</generatePkg>
                     </macConfig>
                 </configuration>
             </execution>
